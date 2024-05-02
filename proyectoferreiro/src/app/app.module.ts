@@ -9,8 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
-//angular material 
-import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 
 
@@ -24,8 +23,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
