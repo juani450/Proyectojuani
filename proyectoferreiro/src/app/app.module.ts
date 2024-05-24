@@ -6,11 +6,8 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MuestraComponent } from './muestra/muestra.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
-
-
-
+//componentes globales
+import { SharedModule } from './modules/shared/shared.module';
 
 
 
@@ -23,8 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
