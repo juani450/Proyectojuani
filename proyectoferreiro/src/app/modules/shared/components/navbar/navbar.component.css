@@ -1,4 +1,36 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  /*
   
+  1) tomi: 
+  2) thiago: 
+  3) javi: 
+  */
+  
+
+  /*declaramos la ppaalabra reservada MEDIA -> Dispositivos pequeños ej(celulares)*/
+  @media (min-width:300px) and (max-width:700px) {
+
+    mat-toolbar{
+      background-color: maroon;
+    }
+
+    #menuInicio{
+      display: none;
+    }
+
+    #menuProducto{
+      display: none;
+    }
+  }
+  @media (min-width: 700px) {
+    mat-toolbar{
+      background-color: darkgreen;
+    }
+
+    #menuIcon{
+      display: none;
+    }
+  }
