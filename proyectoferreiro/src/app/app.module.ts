@@ -13,7 +13,10 @@ import { SharedModule } from './modules/shared/shared.module';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule} from '@angular/fire/compat';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
-import {AngularFireStorageModule} from '@angular/fire/compat/storage'
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import { RegistroComponentComponent } from './autentificacion/pages/registro/registro.component/registro.component.component';
+import { RegistroComponent } from './modules/autentificacion/registro/registro/registro.component';
+import { InicioSesionComponent } from './modules/autentificacion/inicio-sesion/inicio-sesion/inicio-sesion.component'
 
 
 
@@ -21,7 +24,10 @@ import {AngularFireStorageModule} from '@angular/fire/compat/storage'
   declarations: [
     AppComponent,
     InicioComponent,
-    MuestraComponent
+    MuestraComponent,
+    RegistroComponentComponent,
+    RegistroComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
