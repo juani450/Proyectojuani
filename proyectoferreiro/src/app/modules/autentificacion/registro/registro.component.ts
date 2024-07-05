@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 // Servicio de Autentificación
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../autentificacion/services/auth.service'
 // Servicio de Firestore
 import { FirestoreService } from 'src/app/modules/shared/services/firestore.service';
 // Servicio de rutas que otorga Angular
@@ -36,6 +36,8 @@ export class RegistroComponent {
     public servicioRutas: Router // método de navegación
   ){}
 
+
+
   // FUNCIÓN ASINCRONICA PARA EL REGISTRO
   async registrar(){
     // CREDENCIALES = información que ingrese el usuario
@@ -62,6 +64,7 @@ export class RegistroComponent {
       password: this.usuarios.password
     }
 
+
     // constante "res" = resguarda una respuesta
     const res = await this.servicioAuth.registrar(credenciales.email, credenciales.password)
     // El método THEN nos devuelve la respuesta esperada por la promesa
@@ -87,6 +90,7 @@ export class RegistroComponent {
     this.limpiarInputs();
   }
 
+  
   // función para agregar NUEVO USUARIO
   async guardarUsuario(){
     this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AutentificacionRoutingModule } from './autentificacion-routing.module';
 
 // VISTAS DEL MÓDULO AUTENTIFICACIÓN
-import { RegistroComponent } from './registro/registro/registro.component';
+import { RegistroComponent } from './registro/registro.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion/inicio-sesion.component';
 
 // COMPONENTES DE MATERIAL

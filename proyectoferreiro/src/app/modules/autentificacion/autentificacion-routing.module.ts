@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // IMPORTACIÓN A LAS VISTAS DEL MÓDULO AUTENTIFICACIÓN
-import { RegistroComponent } from './registro/registro/registro.component';
+import { RegistroComponent } from './registro/registro.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion/inicio-sesion.component';
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
     path:"registro",component:RegistroComponent
   },
   {
-    path:"inicio-sesion",component:InicioSesionComponent
+    path:"inicioSesion",component:InicioSesionComponent
   }
 ];
 

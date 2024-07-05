@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 
 
+
 //son las encargadas de tner todas las rutas de la pagina
 const routes: Routes = [
   //ruta comun que lleva a un solo componente
