@@ -11,7 +11,8 @@ const routes: Routes = [
   },
   {
     path:"inicioSesion",component:InicioSesionComponent
-  }
+  },
+  
 ];
 
 @NgModule({

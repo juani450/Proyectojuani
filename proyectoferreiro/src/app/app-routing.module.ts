@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
+import { RegistroComponent } from './modules/autentificacion/registro/registro.component';
+import { InicioSesionComponent } from './modules/autentificacion/inicio-sesion/inicio-sesion/inicio-sesion.component';
 
 
 
@@ -11,6 +13,7 @@ const routes: Routes = [
     path:"",component:InicioComponent
   },
   
+  
   // Carga perezosa que lleva a un modulo
   // loadChildren: indica una ruta hija
   // ()=>: ruta de donde viene el modulo
@@ -20,6 +23,9 @@ const routes: Routes = [
   },
   {
     path:"",loadChildren:()=>import('./modules/producto/producto.module').then(m=>m.ProductoModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule)
   }
 
 
