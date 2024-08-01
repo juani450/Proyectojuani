@@ -61,10 +61,14 @@ export class RegistroComponent {
     // alert("Te registraste con éxito :)");
     // ############################### FIN LOCAL
 
+
+    
     const credenciales = {
       email: this.usuarios.email,
       password: this.usuarios.password
     }
+
+
 
 
     // constante "res" = resguarda una respuesta
@@ -101,7 +105,10 @@ export class RegistroComponent {
     this.limpiarInputs();
   }
 
+
+
   
+
   // función para agregar NUEVO USUARIO
   async guardarUsuario(){
     this.servicioFirestore.agregarUsuario(this.usuarios, this.usuarios.uid)
@@ -112,6 +119,9 @@ export class RegistroComponent {
       console.log('Error =>', err);
     })
   }
+
+
+
 
   // Función para vaciar el formulario
   limpiarInputs(){
