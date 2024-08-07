@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
 import { AngularFirestore ,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { ProductoComponent } from '../../producto/page/producto/producto.component';
+import { map } from 'rxjs';
+
 
 
 
@@ -47,7 +49,22 @@ export class CrudService {
 
 
    //OBTENER PRODUCTO
-   ///ADITAR PRODUCTO
+
+   obtenerProducto(){
+   
+    //snapshotChange -> toma na captura del estado de los datos
+    //pipe -> funciona como una tuberia que retoma el nuevo arreglo de datos
+    //map -> "mapea" o recorre esa nueva informacion
+    //a -> resguarda la nueva informacion y la envia
+   
+    return this.productosCollection.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())))
+   }
+
+
+
+   //EDITAR PRODUCTO
+
+
    //ELIMINAR PRODUCTO
 
 

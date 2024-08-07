@@ -15,13 +15,16 @@
     <tbody>
         <tr *ngFor="let producto of coleccionProductos">
             <th scope="row">1</th>
-            
+
             <td><img src="{{producto.imagen}}" alt="{{producto.alt}}"></td>
+
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
             <td>{{producto.descripcion}}</td>
             <td>{{producto.categoria}}</td>
-            
+
+
+
             <!--ACCIONES-->
             <td>
                 <button id="btn-edit" title="Editar" type="button" class="btn btn-outline-warning">
@@ -37,3 +40,73 @@
     </tbody>
 
 </table>
+
+
+
+<!-- Boton para agregar productos -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarProducto">
+    Agregar un nuevo producto
+</button>
+
+<!-- Modal para agregar productos -->
+<div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Ingrese un nuevo producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+
+
+            <!--CUERPO DEL MODAL-->
+            <div [FormGroup]="producto" class="modal-body">
+
+                <div class="mb-3">
+                    <label for="form-label">Ingrese el nombre del producto</label>
+                    <input class="form-control" type="text" formControlName="nombre" placeholder="Ej: Camiseta de boca">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Ingrese el nombre del producto</label>
+                    <input class="form-control" type="text" formControlName="descripcion" placeholder="Ej: Camiseta marca Adidas">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Ingrese el precio del producto</label>
+                    <input class="form-control" type="number" formControlName="precio" placeholder="...">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Seleccione una categoria</label>
+                    <select class="form-control" type="button" formControlName="categoria">
+                        <option value="buzos">Buzos</option>
+                        <option value="pantalones">Pantalones</option>
+                        <option value="remeras">Remeras</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Ingrese una imagen</label>
+                    <input class="form-control" type="text" formControlName="imagen" placeholder="Ingrese vinculo de una imagen">
+                </div>
+
+                <div class="mb-3">
+                    <label for="form-label">Ingrese texto alternativo</label>
+                    <input class="form-control" type="text" formControlName="alt" placeholder="Ingrese un texto alternativo">
+                </div>
+
+            </div>
+
+
+            <!--ACCIONES DEL MODAL-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+            
+        </div>
+    </div>
+</div>

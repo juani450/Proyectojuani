@@ -16,6 +16,7 @@
     <button id="menuInicio" mat-button routerLink="/inicio">inicio</button>
 
     <button id="menuProducto" mat-button [matMenuTriggerFor]="producto">Productos</button>
+    
     <mat-menu #producto="matMenu">
         <button mat-menu-item routerLink="/producto">general</button>
         <button mat-menu-item routerLink="/comida">Comida</button>
@@ -29,7 +30,7 @@
 
     <span class="example-spacer"></span>
 
-    <!--manejo de  iniciode sesion y cerrar sesion-->
+    <!--manejo de  inicio de sesion y cerrar sesion-->
 
 
     <!-- Inicio de sesión y formulario de registro -->
