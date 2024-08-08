@@ -10,7 +10,7 @@
   */
   
 
-  /*declaramos la ppaalabra reservada MEDIA -> Dispositivos pequeños ej(celulares)*/
+  /*declaramos la palabra reservada MEDIA -> Dispositivos pequeños ej(celulares)*/
   @media (min-width:300px) and (max-width:700px) {
 
     mat-toolbar{
@@ -27,7 +27,7 @@
   }
   @media (min-width: 700px) {
     mat-toolbar{
-      background-color: darkgreen;
+      background-color: lightcoral;
     }
 
     #menuIcon{

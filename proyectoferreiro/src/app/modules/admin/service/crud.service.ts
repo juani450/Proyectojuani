@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Producto } from 'src/app/models/producto';
-import { AngularFirestore ,AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { ProductoComponent } from '../../producto/page/producto/producto.component';
 import { map } from 'rxjs';
 
@@ -16,56 +16,70 @@ export class CrudService {
 
   constructor(private database: AngularFirestore) {
     this.productosCollection = database.collection('producto')
-   }
+  }
 
 
 
 
-   //CREAR PRODUCTO
+  //CREAR PRODUCTO
 
-   crearProducto(producto:Producto){
+  crearProducto(producto: Producto) {
     return new Promise(async (resolve, reject) => {
 
-      try{
+      try {
         //CREAMOS NUMERO IDENTIFICATIVO PARTA EL PRODUCTO EN LA BASE DE DATOS
         const IdProducto = this.database.createId();
-      
-      //ASIGNAMOS ID CREADO AL ATRIBUTO IDPRODUCTO DE LA INTERFAZ "PRODUCTO"
+
+        //ASIGNAMOS ID CREADO AL ATRIBUTO IDPRODUCTO DE LA INTERFAZ "PRODUCTO"
         producto.IdProducto = IdProducto;
 
         const resultado = await this.productosCollection.doc(IdProducto).set(producto)
 
         resolve(resultado);
 
-      }catch(error){
+      } catch (error) {
         reject(error);
       }
     })
-   }
+  }
 
 
 
 
 
 
-   //OBTENER PRODUCTO
+  //OBTENER PRODUCTO
 
-   obtenerProducto(){
-   
+  obtenerProducto() {
+
     //snapshotChange -> toma na captura del estado de los datos
     //pipe -> funciona como una tuberia que retoma el nuevo arreglo de datos
     //map -> "mapea" o recorre esa nueva informacion
     //a -> resguarda la nueva informacion y la envia
-   
-    return this.productosCollection.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())))
-   }
+
+    return this.productosCollection.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())))
+  }
 
 
 
-   //EDITAR PRODUCTO
+  //EDITAR PRODUCTO
 
 
-   //ELIMINAR PRODUCTO
+  //ELIMINAR PRODUCTO
+  eliminarProducto(idProducto: string){
+    return new Promise((resolve, reject) => {
+      try {
+        //accede a la coleccion, busco su ID y lo elimino
+        const respuesta = this.productosCollection.doc(idProducto).delete();
+        resolve(respuesta)
+      }
+      catch(error){
+        reject(error);
+      }
+    })
+  }
+
+
 
 
 

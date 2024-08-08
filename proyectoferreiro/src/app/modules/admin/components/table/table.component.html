@@ -61,7 +61,7 @@
 
 
             <!--CUERPO DEL MODAL-->
-            <div [FormGroup]="producto" class="modal-body">
+            <div [formGroup]="producto" class="modal-body">
 
                 <div class="mb-3">
                     <label for="form-label">Ingrese el nombre del producto</label>
@@ -69,8 +69,9 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="form-label">Ingrese el nombre del producto</label>
-                    <input class="form-control" type="text" formControlName="descripcion" placeholder="Ej: Camiseta marca Adidas">
+                    <label for="form-label">Ingrese descripcion del producto</label>
+                    <input class="form-control" type="text" formControlName="descripcion"
+                        placeholder="Ej: Camiseta marca Adidas">
                 </div>
 
                 <div class="mb-3">
@@ -89,12 +90,14 @@
 
                 <div class="mb-3">
                     <label for="form-label">Ingrese una imagen</label>
-                    <input class="form-control" type="text" formControlName="imagen" placeholder="Ingrese vinculo de una imagen">
+                    <input class="form-control" type="text" formControlName="imagen"
+                        placeholder="Ingrese vinculo de una imagen">
                 </div>
 
                 <div class="mb-3">
                     <label for="form-label">Ingrese texto alternativo</label>
-                    <input class="form-control" type="text" formControlName="alt" placeholder="Ingrese un texto alternativo">
+                    <input class="form-control" type="text" formControlName="alt"
+                        placeholder="Ingrese un texto alternativo">
                 </div>
 
             </div>
@@ -102,11 +105,11 @@
 
             <!--ACCIONES DEL MODAL-->
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" (click)="agregarProducto()" class="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
 
-            
+
         </div>
     </div>
 </div>

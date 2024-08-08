@@ -32,7 +32,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   exports: [
     AdminComponent,
     TableComponent,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
