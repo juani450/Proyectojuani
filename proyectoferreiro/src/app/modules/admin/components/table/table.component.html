@@ -16,7 +16,7 @@
         <tr *ngFor="let producto of coleccionProductos">
             <th scope="row">1</th>
 
-            <td><img src="{{producto.imagen}}" alt="{{producto.alt}}"></td>
+            <td><img src="{{producto.imagen}}" alt="{{producto.alt}}" width="100px"></td>
 
             <td>{{producto.nombre}}</td>
             <td>{{producto.precio}}</td>
@@ -27,12 +27,16 @@
 
             <!--ACCIONES-->
             <td>
-                <button id="btn-edit" title="Editar" type="button" class="btn btn-outline-warning">
+                <!--M recibe como parametro el prodcuto seleccionado o iterado en esa fila-->
+                <button id="btn-edit" title="Editar" type="button" class="btn btn-outline-warning"
+                    data-bs-toggle="modal" data-bs-target="#editarProducto">
                     <mat-icon>edit</mat-icon>
                 </button>
             </td>
             <td>
-                <button id="btn-edit" title="Eliminar" type="button" class="btn btn-outline-danger">
+                <!--MostrarBorrar recibe como parametro el prodcuto seleccionado o iterado en esa fila-->
+                <button id="btn-edit" title="Eliminar" type="button" class="btn btn-outline-danger"
+                    data-bs-toggle="modal" data-bs-target="#eliminarProducto" (click)="mostrarBorrar(producto)">
                     <mat-icon>Delete</mat-icon>
                 </button>
             </td>
@@ -105,11 +109,45 @@
 
             <!--ACCIONES DEL MODAL-->
             <div class="modal-footer">
-                <button type="button" (click)="agregarProducto()" class="btn btn-outline-success" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" (click)="agregarProducto()" class="btn btn-outline-success"
+                    data-bs-dismiss="modal">Guardar</button>
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
 
 
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--Modal para eliminar producto-->
+<div class="modal fade" *ngIf="modalVisibleProducto" id="eliminarProducto" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">¿Estas seguro de eliminar este producto?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!--Cuerpo del modal-->
+            <div class="modal-body">
+
+                <!--Mostramos al usuario la informacion del produicto que quiere eliminar-->
+                {{productoSeleccionado.nombre}}
+
+                <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}" width="100%">
+            </div>
+
+
+            <!--ACCIONES DEL MODALL-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" (click)="borrarProducto()">Eliminar</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
         </div>
     </div>
 </div>
