@@ -1,28 +1,50 @@
-<p>card works!</p>
-<div class="container">
-    <div class="row">
-        <h1>inicio</h1>
-        <div class="col">
-            <div *ngFor="let i of info" class="contenido">
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>{{i.nombre}}</mat-card-title>
-                      <mat-card-subtitle>hola</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="{{i.imagen}}" alt="{{i.alt}}">
-                    <mat-card-content>
-                      <p>
-                        {{i.edad}}
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-button>LIKE</button>
-                      <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                  </mat-card>
-            </div>
-        </div>
+<div class="row">
+  <div class="col" *ngFor="let producto of coleccionProductos">
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{producto.imagen}}" class="card-img-top" alt="{{producto.alt}}">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.nombre}}</h5>
+        <p class="card-text">$ {{producto.precio}}</p>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="modalCard"
+          (click)="mostrarVer(producto)">
+
+          Ver Más
+        </button>
+      </div>
     </div>
+
+  </div>
 </div>
-  
+
+
+<!--Modal para ver mas informacion-->
+
+<!-- Modal -->
+<div class="modal fade" id="modalCard" *ngIf="modalVisible" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{productoSeleccionado.nombre}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}">
+
+        <div class="mb-3">
+          {{productoSeleccionado.descripcion}}
+        </div>
+        <div class="mb-3">
+          {{productoSeleccionado.precio}}
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar al carrito</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

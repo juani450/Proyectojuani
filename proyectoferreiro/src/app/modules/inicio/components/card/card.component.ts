@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Animal } from 'src/app/models/animal';
+import { Producto } from 'src/app/models/producto';
+import { CrudService } from 'src/app/modules/admin/service/crud.service';
 
 @Component({
   selector: 'app-card',
@@ -8,6 +10,51 @@ import { Animal } from 'src/app/models/animal';
 })
 export class CardComponent {
 
+
+  //definimos colccion local de productos
+  coleccionProductos: Producto[] = [];
+
+  //variable local para obtener producto seleccionado
+  productoSeleccionado!: Producto;
+
+  //variable para manejar estado de uin modal
+  modalVisible: boolean = false;
+
+  constructor(public servicioCrud: CrudService) { }
+
+  ngOnInit(): void {
+    this.servicioCrud.obtenerProducto().subscribe(producto => {
+      this.coleccionProductos = producto;
+    })
+  }
+
+
+  //funcion para modal que muestre la informacion de un prodcuto en especifico
+  mostrarVer(info: Producto) {
+    //habilita visibilidad del modal
+    this.modalVisible = true;
+
+    //guarda informacion de un roducto elegido por el usuario
+    this.productoSeleccionado = info;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*
   //propiedad publica (tipo array)
   public info: Animal[];
 
@@ -35,5 +82,5 @@ export class CardComponent {
       },
       
     ]
-  }
+  }*/
 }

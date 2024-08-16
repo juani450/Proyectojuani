@@ -81,6 +81,8 @@ export class TableComponent {
             title: "Sos un capo!",
             text: "El producto ha sido agregado correctamente!",
             icon: "success"
+
+
           });
 
 
@@ -109,18 +111,18 @@ export class TableComponent {
     this.productoSeleccionado = productoSeleccionado;
   }
 
-  borrarProducto(){
+  borrarProducto() {
     this.servicioCrud.eliminarProducto(this.productoSeleccionado.IdProducto)
-    .then(respuesta => {
-      alert("El producto se ha eliminado correctamente!")
-    })
-    .catch(error =>{
-      alert("No se ha podido eliminar el producto \n"+error);
-    })
+      .then(respuesta => {
+        alert("El producto se ha eliminado correctamente!")
+      })
+      .catch(error => {
+        alert("No se ha podido eliminar el producto \n" + error);
+      })
   }
 
 
-  mostrarEditar(productoSeleccionado: Producto){
+  mostrarEditar(productoSeleccionado: Producto) {
     this.productoSeleccionado = productoSeleccionado;
 
     //Enviar o "setear" los nuevos valores y reasignarlos a las variables
@@ -137,10 +139,10 @@ export class TableComponent {
   }
 
 
-  editarProducto(){
+  editarProducto() {
     let datos: Producto = {
       //Solo el ID toma y deja igual su valor
-      IdProducto: this. productoSeleccionado.IdProducto,
+      IdProducto: this.productoSeleccionado.IdProducto,
       nombre: this.producto.value.nombre!,
       precio: this.producto.value.precio!,
       descripcion: this.producto.value.descripcion!,
@@ -150,11 +152,11 @@ export class TableComponent {
     }
 
     this.servicioCrud.modificarProducto(this.productoSeleccionado.IdProducto, datos)
-    .then(producto => {
-      alert("El producto fue modificado con èxito");
-    })
-    .catch(error => {
-      alert("Hubo un problema al modificar el producto");
-    })
+      .then(producto => {
+        alert("El producto fue modificado con èxito");
+      })
+      .catch(error => {
+        alert("Hubo un problema al modificar el producto");
+      })
   }
 }

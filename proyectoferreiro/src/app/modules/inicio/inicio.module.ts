@@ -30,7 +30,8 @@ import {MatCardModule} from '@angular/material/card';
   ],
   exports:[
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    CardComponent
   ]
 })
 export class InicioModule { }
