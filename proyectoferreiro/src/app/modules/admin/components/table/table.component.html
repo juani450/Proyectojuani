@@ -38,7 +38,7 @@
 
             <!--ELIMINAR-->
             <td>
-                <!--MostrarBorrar recibe como parametro el prodcuto seleccionado o iterado en esa fila-->
+                <!--MostrarBorrar recibe como parametro el producto seleccionado o iterado en esa fila-->
                 <button id="btn-edit" title="Eliminar" type="button" class="btn btn-outline-danger"
                     data-bs-toggle="modal" data-bs-target="#eliminarProducto" (click)="mostrarBorrar(producto)">
                     <mat-icon>Delete</mat-icon>
@@ -167,9 +167,9 @@
                 <div class="mb-3">
                     <label for="form-label">Seleccione una categoria</label>
                     <select class="form-control" type="button" formControlName="categoria">
-                        <option value="buzos">Buzos</option>
-                        <option value="pantalones">Pantalones</option>
-                        <option value="remeras">Remeras</option>
+                        <option value="comida">Comida</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="juguetes">Juguetes</option>
                     </select>
                 </div>
 
@@ -228,7 +228,7 @@
             <div class="modal-body">
 
                 <!--Mostramos al usuario la informacion del produicto que quiere eliminar-->
-                {{productoSeleccionado.nombre}}
+                <h1>{{productoSeleccionado.nombre}}</h1>
 
                 <img src="{{productoSeleccionado.imagen}}" alt="{{productoSeleccionado.alt}}" width="100%">
             </div>

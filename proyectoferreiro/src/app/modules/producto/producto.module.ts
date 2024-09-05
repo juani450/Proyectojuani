@@ -12,13 +12,15 @@ import { CardJuguetesComponent } from './components/card-juguetes/card-juguetes.
 
 
 
+
 @NgModule({
   declarations: [
     ProductoComponent,
     ComidaComponent,
     RopaComponent,
     JuguetesComponent,
-    CardJuguetesComponent
+    CardJuguetesComponent,
+
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,7 @@ import { CardJuguetesComponent } from './components/card-juguetes/card-juguetes.
     RopaComponent,
     ComidaComponent,
     JuguetesComponent,
-    CardJuguetesComponent
+    CardJuguetesComponent,
   ]
 })
 export class ProductoModule { }
