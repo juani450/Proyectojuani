@@ -9,6 +9,8 @@ import { ComidaComponent } from './page/comida/comida.component';
 import { RopaComponent } from './page/ropa/ropa.component';
 import { JuguetesComponent } from './page/juguetes/juguetes.component';
 import { CardJuguetesComponent } from './components/card-juguetes/card-juguetes.component';
+import { CardComponent } from './components/card/card.component';
+import { CarruselComponent } from './components/carrusel/carrusel.component';
 
 
 
@@ -20,6 +22,8 @@ import { CardJuguetesComponent } from './components/card-juguetes/card-juguetes.
     RopaComponent,
     JuguetesComponent,
     CardJuguetesComponent,
+    CardComponent,
+    CarruselComponent,
 
   ],
   imports: [

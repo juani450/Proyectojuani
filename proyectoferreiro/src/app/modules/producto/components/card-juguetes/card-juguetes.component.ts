@@ -38,9 +38,11 @@ export class CardJuguetesComponent {
     this.servicioCrud.obtenerProducto().subscribe(producto => {
       this.coleccionProductos = producto;
 
+
+      //mostrar la coleccion actual de juguetes
       this.mostrarProductoJuguetes();
     })
-    //mostrar la coleccion actual de juguetes
+    
   }
 
 

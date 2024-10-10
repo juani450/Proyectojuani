@@ -24,7 +24,7 @@ export class NavbarComponent {
   cerrarSesion() {
     this.deslogueado = false;
     //metodo cerrar sesion va a eliminar el token actual del usuario
-    //token: estado actual del usuario en el navegador para mamtener la sesion abierta
+    //token: estado actual del usuario en el navegador para mantener la sesion abierta
     this.servicioAuth.cerrarSesion();
 
     this.servicioRutas.navigate(['/']);  //redirigimos a la raiz de la pagina
